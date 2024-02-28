@@ -1,6 +1,5 @@
 // server.cjs
 import express from 'express';
-import nodemailer from 'nodemailer';
 import cors from 'cors';
 import sgMail from '@sendgrid/mail';
 import dotenv from 'dotenv';
