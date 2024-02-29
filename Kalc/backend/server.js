@@ -14,7 +14,7 @@ app.use(express.json());
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 // console.log(sgMail.setApiKey(process.env.SENDGRID_API_KEY))
 app.use(cors({
-  origin: ['https://401kapp.vercel.app'],
+  origin: 'https://401kapp.vercel.app',
   methods: ['GET', 'POST'],
   credentials:true
 }));
