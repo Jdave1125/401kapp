@@ -11,7 +11,7 @@ function ViewReport({ userInput, totalBalance, chartData, options }) {
   const handleEmailReport = () => {
 
 
-  fetch('https://401kapp-backend.vercel.app/send-report',{
+  fetch('https://verc-test-six.vercel.app/send-report',{
     method:'POST',
     headers:{
       'Content-Type':'application/json',
