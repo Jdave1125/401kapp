@@ -12,6 +12,16 @@ app.use(cors());
 
 // Set SendGrid API key securely
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// console.log(sgMail.setApiKey(process.env.SENDGRID_API_KEY))
+app.use(cors({
+  origin: ['https://401kapp.vercel.app'],
+  methods: ['GET', 'POST'],
+  credentials:true
+}));
+
+app.get('/', (req,res)=>{
+  res.json("Hello")
+})
 
 app.post('/send-report', async (req, res) => {
     try {
