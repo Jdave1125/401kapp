@@ -108,7 +108,7 @@ const chartData = () => {
           />
 
 
-          <label htmlFor='description'>Yearly Contribution:</label>
+          <label htmlFor='description'>Percentage of Salary to contribute yearly:</label>
           <input
             type='text'
             id='cont'
