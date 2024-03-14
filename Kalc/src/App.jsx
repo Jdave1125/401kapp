@@ -15,7 +15,7 @@ function App() {
     curBal:'1500',
     cont:'5.5',
     salary:'48900',
-    // rate:'7',
+    rate:'7',
   })
 
   const handleInputChange =(e)=>{
@@ -25,15 +25,18 @@ function App() {
   
   const totalBalance = () => {
     const yearsUntilRetirement = parseInt(userInput.retireAt) - parseInt(userInput.age);
-    const yearlyContribution = parseFloat(userInput.cont) / 100 * parseFloat(userInput.salary);
+    const yearlyContribution = (parseFloat(userInput.cont) / 100) * parseFloat(userInput.salary);
     let yearlyBalance = parseFloat(userInput.curBal);
-
+    let currentBalance = yearlyBalance;
+  
     for (let i = 0; i < yearsUntilRetirement; i++) {
-        yearlyBalance += yearlyContribution;
+      const yearlyInterest = (parseFloat(userInput.rate) / 100) * currentBalance;
+      yearlyBalance = currentBalance + yearlyContribution + yearlyInterest;
+      currentBalance = yearlyBalance;
     }
-    let final = yearlyBalance+(yearlyContribution)
-    return final.toFixed(2);
-}
+  
+    return yearlyBalance.toFixed(2);
+  };
 
 const options = {
   title : "My 401k Balance",
@@ -127,14 +130,14 @@ const chartData = () => {
           />
 
 
-        {/* <label htmlFor='rate'>Rate of Return (%):</label>
+         <label htmlFor='rate'>Rate of Return (%):</label>
           <input
             type='text'
             id='rate'
             name='rate'
             value={userInput.rate}
             onChange={handleInputChange}
-            /> */}
+            /> 
         
           </div>
 

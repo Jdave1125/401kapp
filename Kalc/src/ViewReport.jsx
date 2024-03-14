@@ -53,6 +53,7 @@ function ViewReport({ userInput, totalBalance, chartData, options }) {
         <p>Current Balance: {userInput.curBal}</p>
         <p>Yearly Contribution: {userInput.cont}</p>
         <p>Salary: {userInput.salary}</p>
+        <p>Rate: {userInput.rate}</p>
       </div>
 
       <div className='chart-card'>
